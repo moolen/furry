@@ -1,7 +1,8 @@
 # FURRRRR
 These are the files that make AwesomeWM work the way i want.
-Shoutout to
- [awesome-copycats](https://github.com/copycat-killer/awesome-copycats) and [legostax/dotfiles](https://github.com/legostax/dotfiles).
+Shoutout to [awesome-copycats](https://github.com/copycat-killer/awesome-copycats) and [legostax/dotfiles](https://github.com/legostax/dotfiles).
+
+![Screenshot](https://raw.githubusercontent.com/moolen/furry/master/screenshot.jpg)
 
  ## Installation
  - Setup AwesomeWM 4.2
