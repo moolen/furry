@@ -148,7 +148,7 @@ awful.screen.connect_for_each_screen(function(s)
         width = 22,
         height = 2,
         screen = s,
-        bg = "#4082f7",
+        bg = "#4082f733",
         fg = "#fefefe"
     })
     s.tagline:connect_signal("button::press", function(_,_,_,b)
@@ -178,7 +178,7 @@ awful.screen.connect_for_each_screen(function(s)
     end)
 
     -- Create a tasklist widget for each screen
-    local taskliststyle = { bg_focus = "#435677", spacing = 5 }
+    local taskliststyle = { bg_focus = "#2d3440", spacing = 5 }
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, keybindings.tasklist_buttons, taskliststyle)
 
     -- Create a wibox for each screen #31373a00
