@@ -61,6 +61,7 @@ keybindings.globalkeys = gears.table.join(
 
 keybindings.clientkeys = gears.table.join(
     awful.key({ config.modkey,           }, "o",      awful.client.movetoscreen),
+    awful.key({ config.modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ config.modkey,           }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
