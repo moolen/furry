@@ -1,13 +1,10 @@
 -- Standard awesome library
 local beautiful = require("beautiful")
+local revelation = require("revelation")
+local naughty = require("naughty")
 local gears = require("gears")
 local awful = require("awful")
-              require("awful.autofocus")
-local config  = require("config")
-local keybindings = require("keybindings")
-local naughty = require("naughty")
-
-terminal = config.terminal
+require("awful.autofocus")
 
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
@@ -28,10 +25,16 @@ do
     end)
 end
 
+beautiful.init(gears.filesystem.get_configuration_dir().."themes/default/theme.lua")
+revelation.init()
 
+local config  = require("config")
+local keybindings = require("keybindings")
 require("client")
 require("screen")
 
+revelation.charorder = config.revelation_charorder
+terminal = config.terminal
 root.keys(keybindings.globalkeys)
 
 -- {{{ Rules

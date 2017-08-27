@@ -15,8 +15,8 @@ profileConfigPath = gfs.get_configuration_dir()
 theme.font          = "Ubuntu Mono 10"
 
 theme.bg_normal     = "#31373a"
-theme.window_bg_normal = "#3d4346"
-theme.window_bg_focus = "#31373a"
+theme.window_bg_normal = "#3d434677"
+theme.window_bg_focus = "#31373aff"
 theme.bg_focus      = "#4082f7"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#44444422"

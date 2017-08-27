@@ -2,6 +2,7 @@ local gears = require("gears")
 local awful = require("awful")
 local config = require("config")
 local util = require("util")
+local revelation = require("revelation")
 
 local keybindings = {}
 
@@ -14,6 +15,8 @@ keybindings.globalkeys = gears.table.join(
               {description = "view previous", group = "tag"}),
     awful.key({ config.modkey,           }, "Right",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
+    -- revelation 
+    awful.key({ config.modkey,           }, "e",      revelation),
     -- By direction client focus
     awful.key({ config.modkey }, "j",
         function()

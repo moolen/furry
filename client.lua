@@ -105,7 +105,13 @@ client.connect_signal("request::titlebars", function(c)
 
         titlebartext = wibox.container.margin(awful.titlebar.widget.titlewidget(c),5)
         titlebartext.align = "left"
-        awful.titlebar(c, { size = 28, bg_focus = beautiful.window_bg_focus, bg_normal = beautiful.window_bg_normal, fg_focus = beautiful.window_fg_focus, fg_normal = beautiful.window_fg_normal }) : setup {
+        awful.titlebar(c, {
+            size = 28,
+            bg_focus = beautiful.window_bg_focus,
+            bg_normal = beautiful.window_bg_normal,
+            fg_focus = beautiful.window_fg_focus,
+            fg_normal = beautiful.window_fg_normal
+        }) : setup {
             { -- Left
                 {
                     titlebaricon,
