@@ -64,8 +64,7 @@ theme.hotkeys_description_font = "Roboto 9"
 theme.prompt_fg = "#aaa"
 theme.prompt_bg = "#000"
 
-
-theme.menu_submenu_icon = themes_path.."default/submenu.png"
+theme.wallpaper_dir = themes_path.."default/wallpaper/"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
@@ -97,8 +96,6 @@ theme.titlebar_maximized_button_normal_active_press = profileConfigPath.."themes
 theme.titlebar_maximized_button_focus_active  = profileConfigPath.."themes/default/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_focus_active_hover = profileConfigPath.."themes/default/titlebar/maximized_focus_active_hover.png"
 theme.titlebar_maximized_button_focus_active_press = profileConfigPath.."themes/default/titlebar/maximized_focus_active_press.png"
-
-theme.wallpaper = themes_path.."default/background.png"
 
 theme.vol = profileConfigPath .. "themes/default/icons/vol.png"
 theme.vol_low  = profileConfigPath .. "themes/default/icons/vol_low.png"

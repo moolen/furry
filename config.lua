@@ -1,11 +1,14 @@
 local awful = require("awful")
 local lain = require("lain")
+local gears = require("gears")
+local beautiful = require("beautiful")
+beautiful.init(gears.filesystem.get_configuration_dir().."themes/default/theme.lua")
 
 local config = {
     modkey = "Mod4",
     altkey = "Mod1",
     terminal = "dbus-launch gnome-terminal",
-    change_wallpaper = "feh --randomize --bg-scale /home/moritz/.wallpaper/*",
+    change_wallpaper = "feh --randomize --bg-scale "..beautiful.wallpaper_dir,
     run_menu = "dmenu_run -sb '#4082f7' -nb '#000' -l 10 -p '>' -m 0",
     layouts = {
         awful.layout.suit.fair,

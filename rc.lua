@@ -1,11 +1,11 @@
 -- Standard awesome library
+local beautiful = require("beautiful")
 local gears = require("gears")
 local awful = require("awful")
               require("awful.autofocus")
-local keybindings = require("keybindings")
-local beautiful = require("beautiful")
-local naughty = require("naughty")
 local config  = require("config")
+local keybindings = require("keybindings")
+local naughty = require("naughty")
 
 terminal = config.terminal
 
@@ -28,7 +28,6 @@ do
     end)
 end
 
-beautiful.init(gears.filesystem.get_configuration_dir().."themes/default/theme.lua")
 
 require("client")
 require("screen")
