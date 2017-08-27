@@ -148,7 +148,7 @@ awful.screen.connect_for_each_screen(function(s)
         width = 22,
         height = 2,
         screen = s,
-        bg = "#4082f733",
+        bg = "#4082f788",
         fg = "#fefefe"
     })
     s.tagline:connect_signal("button::press", function(_,_,_,b)
