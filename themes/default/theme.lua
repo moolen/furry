@@ -64,7 +64,7 @@ theme.hotkeys_description_font = "Roboto 9"
 theme.prompt_fg = "#aaa"
 theme.prompt_bg = "#000"
 
-theme.wallpaper_dir = themes_path.."default/wallpaper/"
+theme.wallpaper_dir = profileConfigPath.."themes/default/wallpaper/"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
