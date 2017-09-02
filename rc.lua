@@ -61,5 +61,4 @@ awful.rules.rules = {
             titlebars_enabled = true
         }
     },
-
 }

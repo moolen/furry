@@ -17,7 +17,7 @@ theme.font          = "Ubuntu Mono 10"
 theme.bg_normal     = "#31373a"
 theme.window_bg_normal = "#3d434677"
 theme.window_bg_focus = "#31373aff"
-theme.bg_focus      = "#4082f7"
+theme.bg_focus      = "#4082f777"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#44444422"
 theme.bg_systray    = "#232729"
@@ -43,6 +43,13 @@ theme.taglist_squares_sel = theme_assets.taglist_squares_sel(
 theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
+
+theme.taglist_fg_focus    = "#ffffff"
+theme.taglist_fg_occupied = "#666666"
+theme.taglist_fg_urgent   = "#ED7572"
+theme.taglist_fg_empty    = "#666666"
+theme.taglist_spacing     = 2
+
 
 -- Tasklist stuffs
 theme.tasklist_plain_task_name = true
@@ -129,9 +136,6 @@ theme.layout_cascade     = themes_path .. "cascade.png"
 theme.layout_cascadetile = themes_path .. "cascadetile.png" -- cascade.tile
 theme.layout_centerwork  = themes_path .. "centerwork.png"
 theme.layout_centerhwork = themes_path .. "centerworkh.png" -- centerwork.horizontal
-
-
-theme.awesome_icon = profileConfigPath.."newui/applauncher.png"
 
 theme.icon_theme = "breeze"
 

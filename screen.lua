@@ -17,39 +17,12 @@ local lain = require("lain")
 require("client")
 
 tags = {
-    names  = {"CHROME", "TERM", "DB", "CODE"},
-    layout = { config.layouts[1], config.layouts[1], config.layouts[1], config.layouts[1] }
-}
-
--- tag imageboxes
-chrometag = wibox.widget.imagebox(profileConfigPath.."newui/chrometag.png",true)
-termtag = wibox.widget.imagebox(profileConfigPath.."newui/terminaltag.png",true)
-dbtag = wibox.widget.imagebox(profileConfigPath.."newui/database.png",true)
-codetag = wibox.widget.imagebox(profileConfigPath.."newui/code.png",true)
-
-local tag_1 = {
-    chrometag,
-    layout = wibox.container.margin(chrometag,5,5,2,4)
-}
-
-local tag_2 = {
-    termtag,
-    layout = wibox.container.margin(termtag,5,3,2,4)
-}
-
-local tag_3 = {
-    dbtag,
-    layout = wibox.container.margin(dbtag,5,3,2,4)
-}
-
-local tag_4 = {
-    codetag,
-    layout = wibox.container.margin(codetag,3,2,2,4)
+    names  = {"⌘", "⌥", "λ", "ϰ", "𝜑"},
 }
 
 menubar.utils.terminal = config.terminal
 mytextclock = wibox.widget.textclock(" %H:%M ")
-
+mytaglist = {}
 
 -- Battery
 baticon = wibox.widget.imagebox(beautiful.bat)
@@ -130,31 +103,8 @@ awful.screen.connect_for_each_screen(function(s)
     local sgeo = s.geometry
     local index = s.index
     util.wallpaper_changer(s)
-    tags[s] = awful.tag(tags.names, s, tags.layout)
-    local taglineoffset = {
-        20,
-        45,
-        67,
-        87
-    }
-    local xoffset = (index-1) * sgeo.width
-    s.tagline = wibox({
-        border_width = 0,
-        ontop = true,
-        visible = true,
-        type = "splash",
-        x = xoffset + taglineoffset[1],
-        y = 18,
-        width = 22,
-        height = 2,
-        screen = s,
-        bg = "#4082f788",
-        fg = "#fefefe"
-    })
-    s.tagline:connect_signal("button::press", function(_,_,_,b)
-        if b == 5 then awful.tag.viewidx(1)
-        elseif b == 4 then awful.tag.viewidx(-1) end
-    end)
+    tags[s] = awful.tag(tags.names, s, config.layouts[1])
+    
     s:connect_signal("tag::history::update", function()
         local curclients = s.selected_tag:clients()
         local val = true
@@ -164,19 +114,7 @@ awful.screen.connect_for_each_screen(function(s)
                 break
             end
         end
-        s.tagline.visible = val
-        s.tagline:emit_signal("widget::redraw_needed")
-        if s.tags[1].selected then
-                s.tagline.x = xoffset+taglineoffset[1]
-        elseif s.tags[2].selected then
-                s.tagline.x = xoffset+taglineoffset[2]
-        elseif s.tags[3].selected then
-                s.tagline.x = xoffset+taglineoffset[3]
-        elseif s.tags[4].selected then
-                s.tagline.x = xoffset+taglineoffset[4]
-        end
     end)
-
     -- Create a tasklist widget for each screen
     local taskliststyle = { bg_focus = "#00000033", bg_normal = "#00000033", spacing = 0 }
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, keybindings.tasklist_buttons, taskliststyle)
@@ -192,16 +130,15 @@ awful.screen.connect_for_each_screen(function(s)
     --checkWibar(s.wibar, s)
     s:connect_signal("tag::history::update", function() util.check_wibar(s.wibar, s) end)
 
+    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all)
+
     -- Add widgets to the wibox
     s.wibar:setup {
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             awful.widget.layoutbox(s),
-            tag_1,
-            tag_2,
-            tag_3,
-            tag_4
+            mytaglist[s],
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets

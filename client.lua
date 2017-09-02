@@ -45,14 +45,12 @@ client.connect_signal("unmanage", function (c)
             break
         end
     end
-    s.tagline.visible = val
     util.check_wibar(s.wibar, s)
 end)
 
 client.connect_signal("property::fullscreen", function(c)
     local s = c.screen
     if c.fullscreen then
-        s.tagline.visible = false
     else
         local curclients = s.selected_tag:clients()
         local val = true
@@ -62,7 +60,6 @@ client.connect_signal("property::fullscreen", function(c)
                 break
             end
         end
-        s.tagline.visible = val
     end
 end)
 
