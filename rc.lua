@@ -61,4 +61,8 @@ awful.rules.rules = {
             titlebars_enabled = true
         }
     },
+    {
+        rule = { class = "Gnome-terminal" },
+        properties = { opacity = 0.85 },
+    }
 }
