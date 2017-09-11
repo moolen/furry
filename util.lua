@@ -21,17 +21,18 @@ end
 
 -- Wibar transparent/opaque function
 util.check_wibar = function(obj, s)
-    local curclients = s.clients
-    obj.bg = "#00000088"
-    beautiful.prompt_bg = "#00000088"
+    --[[local curclients = s.clients
+    obj.bg = "#00000000"
+    beautiful.prompt_bg = "#00000000"
     for _, c in pairs(curclients) do
         if c.maximized then
-            obj.bg = "#000"
-            beautiful.prompt_bg = "#000"
+            obj.bg = "#00000000"
+            beautiful.prompt_bg = "#00000000"
             break
         end
     end
     obj:emit_signal("widget::redraw_needed")
+    ]]--
 end
 
 

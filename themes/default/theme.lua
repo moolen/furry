@@ -49,23 +49,13 @@ theme.taglist_fg_occupied = "#666666"
 theme.taglist_fg_urgent   = "#ED7572"
 theme.taglist_fg_empty    = "#666666"
 theme.taglist_spacing     = 2
+theme.taglist_font        = "Ubuntu Mono 10"
 
 
 -- Tasklist stuffs
 theme.tasklist_plain_task_name = true
 theme.tasklist_disable_task_name = false
 theme.tasklist_disable_icon = true
-
--- Hotkeys dialog
-theme.hotkeys_bg = "#31373a"
-theme.hotkeys_fg = "#aaa"
-theme.hotkeys_border_width = 1
-theme.hotkeys_border_color = "#aaaaaa44"
-theme.hotkeys_modifiers_fg = "#777"
-theme.hotkeys_label_bg = "#000"
-theme.hotkeys_label_fg = "#fff"
-theme.hotkeys_font = "Roboto 9"
-theme.hotkeys_description_font = "Roboto 9"
 
 -- Prompt dialog
 theme.prompt_fg = "#aaa"
