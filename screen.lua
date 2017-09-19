@@ -42,10 +42,15 @@ awful.screen.connect_for_each_screen(function(s)
         end
     end)
     -- Create a tasklist widget for each screen
-    local taskliststyle = { bg_focus = "#00000033", bg_normal = "#00000033", spacing = 0 }
+    local taskliststyle = {
+        bg_focus = "#00000000",
+        bg_normal = "#00000000",
+        spacing = 0
+    }
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, keybindings.tasklist_buttons, taskliststyle)
-    local taglist = awful.widget.taglist(s, awful.widget.taglist.filter.selected, nil, {
-        })
+    local taglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, nil, {
+        bg_focus = "#00000000",
+    })
 
     -- Create a wibox for each screen #31373a00
     s.wibar = awful.wibar({
