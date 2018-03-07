@@ -67,7 +67,7 @@ awful.screen.connect_for_each_screen(function(s)
         end
     })
 
-    local textclock = wibox.container.margin(wibox.widget.textclock("%H:%M"), 5, 7, -3, 0)
+    local textclock = wibox.container.margin(wibox.widget.textclock("%d %b %H:%M"), 5, 7, -3, 0)
 
     local mybattery = lain.widget.bat({
         batteries = {"BAT0", "BAT1"},
