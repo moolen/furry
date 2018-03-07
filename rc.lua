@@ -34,8 +34,6 @@ require("client")
 require("screen")
 local util = require("util")
 
-util.run_once("/home/moritz/.config/polybar/launch.sh")
-
 revelation.charorder = config.revelation_charorder
 terminal = config.terminal
 root.keys(keybindings.globalkeys)
@@ -66,6 +64,6 @@ awful.rules.rules = {
     },
     {
         rule = { class = "Gnome-terminal" },
-        properties = { opacity = 0.85 },
+        properties = { opacity = 0.92 },
     },
 }

@@ -17,8 +17,7 @@ local lain = require("lain")
 require("client")
 
 tags = {
-    --names  = {"", "", "", "", ""},
-    names = {"1", "2", "3", "4", "5"},
+    names  = {"", "𐤁", "𐤀", "ᮄ", "ഭ"},
 }
 
 menubar.utils.terminal = config.terminal
@@ -52,6 +51,41 @@ awful.screen.connect_for_each_screen(function(s)
         bg_focus = "#00000000",
     })
 
+    local volumewidget = lain.widget.alsa({
+        timeout = 2,
+        settings = function()
+            header = " Vol "
+            vlevel  = volume_now.level
+
+            if volume_now.status == "off" then
+                vlevel = vlevel .. "M "
+            else
+                vlevel = vlevel .. " "
+            end
+
+            widget:set_markup( "<span font='Ubuntu Mono 9'>🔊</span> " .. vlevel )
+        end
+    })
+
+    local textclock = wibox.container.margin(wibox.widget.textclock("%H:%M"), 5, 7, -3, 0)
+
+    local mybattery = lain.widget.bat({
+        batteries = {"BAT0", "BAT1"},
+        settings = function()
+            widget:set_markup("<span font='Ubuntu Mono 9'>🗲</span>" .. bat_now.perc)
+        end
+    })
+
+    local mybat = wibox.container.margin(mybattery.widget, 10, 5, 0, 0)
+
+    local mymemory = lain.widget.mem({
+        settings = function()
+            widget:set_markup(mem_now.used .. "M")
+        end
+    })
+    local mymem = wibox.container.margin(mymemory.widget, 10, 15, -3, 0)
+
+
     -- Create a wibox for each screen #31373a00
     s.wibar = awful.wibar({
         position = "bottom",
@@ -69,6 +103,10 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            mybat,
+            mymem,
+            volumewidget,
+            textclock,
             {
                 wibox.widget.systray(),
                 layout = wibox.layout.constraint

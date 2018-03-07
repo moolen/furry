@@ -28,6 +28,7 @@ keybindings.globalkeys = gears.table.join(
             awful.client.focus.bydirection("up")
             if client.focus then client.focus:raise() end
         end),
+    awful.key({ config.modkey, "Shift"   }, "q",      awesome.quit),
     awful.key({ config.modkey }, "h",
         function()
             awful.client.focus.bydirection("left")
