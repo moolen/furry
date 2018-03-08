@@ -12,7 +12,7 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 profileConfigPath = gfs.get_configuration_dir()
 
-theme.font          = "Ubuntu Mono 10"
+theme.font          = "hack 10"
 
 theme.bg_normal     = "#31373a"
 theme.window_bg_normal = "#3d434677"
@@ -49,7 +49,7 @@ theme.taglist_fg_occupied = "#666666"
 theme.taglist_fg_urgent   = "#ED7572"
 theme.taglist_fg_empty    = "#666666"
 theme.taglist_spacing     = 2
-theme.taglist_font        = "Ubuntu Mono 10"
+theme.taglist_font        = "hack"
 
 
 -- Tasklist stuffs

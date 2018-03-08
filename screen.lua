@@ -17,7 +17,7 @@ local lain = require("lain")
 require("client")
 
 tags = {
-    names  = {"", "𐤁", "𐤀", "ᮄ", "ഭ"},
+    names  = {"🖈", "𐤁", "𐤀", "ᮄ", "ഭ"},
 }
 
 menubar.utils.terminal = config.terminal
